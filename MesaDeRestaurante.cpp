@@ -1,14 +1,26 @@
-#include "MesaDeRestaurante.h"
 #include <iostream>
-#include "Pedido.h"
+#include "MesaDeRestaurante.h"
+
 using namespace std;
 
-MesaDeRestaurante::MesaDeRestaurante(Pedido ped)
-:pedidos(ped)
-{
+MesaDeRestaurante::MesaDeRestaurante(){
+    numPedidos = 0;
+    valorTotal = 0.0;
 }
 
+void MesaDeRestaurante::adicionaAoPedido(Pedido p){
+    pedidos[numPedidos] = p;
+    valorTotal += pedidos->getPreco();
+    numPedidos++;
+}
 
-void MesaDeRestaurante::printMesa(){
-    pedidos.imprimePedido();
+double MesaDeRestaurante::calculaTotal(){
+    return valorTotal;
+}
+
+void MesaDeRestaurante::zeraPedidos(){
+    for(int i = 0; i < numPedidos; i++){
+        pedidos[i].setQuantidade(0);
+    }
+    valorTotal = 0.0;
 }

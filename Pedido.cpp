@@ -1,16 +1,30 @@
 #include "Pedido.h"
-#include <iostream>
 #include <string.h>
-using namespace std;
+Pedido::Pedido(){};
+Pedido::Pedido(int numero, int quantidade, string descricao, double preco){
+    setNumero(numero);
+    setQuantidade(quantidade);
+    setDescricao(descricao);
+    setPreco(preco);
+}
 
-Pedido::Pedido(int n, int q, double p, string d)
-{
+void Pedido::setNumero(int n){
     numero = n;
+}
+
+void Pedido::setQuantidade(int q){
     quantidade = q;
-    preco = p;
+}
+
+void Pedido::setDescricao(string d){
     descricao = d;
 }
 
-void Pedido::imprimePedido(){
-    cout << numero << "/" << quantidade << "/" << preco << "/" << descricao <<endl;
+void Pedido::setPreco(double p){
+    preco = p;
 }
+
+int Pedido::getNumero(){return numero;}
+int Pedido::getQuantidade(){return quantidade;}
+string Pedido::getDescricao(){return descricao;}
+double Pedido::getPreco(){return preco;}

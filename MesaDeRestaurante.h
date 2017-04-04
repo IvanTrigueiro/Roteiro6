@@ -1,17 +1,16 @@
-#ifndef MESADERESTAURANTE_H
-#define MESADERESTAURANTE_H
-#include <iostream>
+#ifndef MESA_RESTAURANTE_H_
 #include "Pedido.h"
-using namespace std;
+#include <string.h>
 
-
-class MesaDeRestaurante
-{
-    public:
-        MesaDeRestaurante(Pedido ped);
-        void printMesa();
-    private:
-        Pedido pedidos;
+class MesaDeRestaurante{
+private:
+    Pedido pedidos[100];
+    int numPedidos;
+    double valorTotal;
+public:
+    MesaDeRestaurante();
+    void adicionaAoPedido(Pedido p);
+    void zeraPedidos();
+    double calculaTotal();
 };
-
-#endif // MESADERESTAURANTE_H
+#endif
