@@ -1,5 +1,7 @@
-#include <iostream>
 #ifndef PEDIDO_H_
+#define PEDIDO_H_
+
+#include <iostream>
 #include <string.h>
 
 using namespace std;

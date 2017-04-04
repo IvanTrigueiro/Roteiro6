@@ -1,4 +1,5 @@
 #ifndef MESA_RESTAURANTE_H_
+#define MESA_RESTAURANTE_H_
 #include "Pedido.h"
 #include <string.h>
 
